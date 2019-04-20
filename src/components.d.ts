@@ -12,58 +12,42 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
+  interface NoorseBox {
     /**
     * The first name
     */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+    'header': string;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
+  interface NoorseBoxAttributes extends StencilHTMLAttributes {
     /**
     * The first name
     */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+    'header'?: string;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'NoorseBox': Components.NoorseBox;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'noorse-box': Components.NoorseBoxAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLNoorseBoxElement extends Components.NoorseBox, HTMLStencilElement {}
+  var HTMLNoorseBoxElement: {
+    prototype: HTMLNoorseBoxElement;
+    new (): HTMLNoorseBoxElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'noorse-box': HTMLNoorseBoxElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'noorse-box': HTMLNoorseBoxElement;
   }
 
 
