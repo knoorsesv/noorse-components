@@ -1,7 +1,7 @@
 {
-  "name": "noorse-components",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "name": "noorse-theme-components",
+  "version": "0.0.2",
+  "description": "Components in the style of Noorse",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "unpkg": "dist/ionic.js",
