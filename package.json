@@ -1,6 +1,6 @@
 {
   "name": "noorse-theme-components",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Components in the style of Noorse",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
