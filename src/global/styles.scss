@@ -1,0 +1,37 @@
+
+
+html {
+  font-family: 'Cabin', arial, serif;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+@mixin white-text() {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+
+$header-font: 'Francois One', arial, serif;
+
+$primary: #007800;
+$navbar-breakpoint: 200px;
+
+$navbar-background-color: $neurse-groen;
+$navbar-dropdown-background-color: $neurse-groen;
+
+$navbar-item-hover-color: $neurse-geel;
+$navbar-dropdown-item-hover-color: $neurse-geel;
+
+$navbar-item-hover-background-color: $neurse-groen-darker;
+$navbar-dropdown-item-hover-background-color: $neurse-groen-darker;
+
+@import '../../node_modules/bulma/bulma';
