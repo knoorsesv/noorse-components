@@ -24,3 +24,8 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 /noorse-components.iml
+/.idea/
+/.stencil/
+/dist/
+/node_modules/
+/package-lock.json
