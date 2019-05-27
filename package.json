@@ -1,6 +1,6 @@
 {
   "name": "noorse-theme-components",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Components in the style of Noorse",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -18,8 +18,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@stencil/core": "0.16.2",
     "@stencil/sass": "0.1.1",
-    "@stencil/core": "0.16.2"
+    "bulma": "^0.7.5"
   },
   "resolutions": {
     "tar": "4.4.2"
