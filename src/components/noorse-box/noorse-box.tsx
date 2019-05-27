@@ -2,10 +2,10 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'noorse-box',
-  styleUrl: 'my-component.scss',
-  shadow: false
+  styleUrl: 'noorse-box.scss',
+  shadow: true
 })
-export class MyComponent {
+export class NoorseBox {
   /**
    * The first name
    */
