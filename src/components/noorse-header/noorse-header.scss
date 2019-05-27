@@ -1,0 +1,26 @@
+@import '../../global/styles';
+
+.hero-foot {
+  display: flex;
+  justify-content: center;
+  background-color: $neurse-groen;
+}
+
+.navbar {
+  .navbar-item {
+
+    @include white-text();
+
+    //&:hover, &.has-dropdown:hover, a.navbar-link:hover, a.navbar-item:hover {
+    //  background-color: $neurse-groen;
+    //  color: $neurse-geel;
+    //}
+
+  }
+
+  //.navbar-dropdown {
+  //  background-color: $neurse-groen;
+  //}
+  width: fit-content;
+}
+

@@ -24,15 +24,24 @@ export namespace Components {
     */
     'header'?: string;
   }
+
+  interface NoorseHeader {
+    'navigation': string;
+  }
+  interface NoorseHeaderAttributes extends StencilHTMLAttributes {
+    'navigation'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'NoorseBox': Components.NoorseBox;
+    'NoorseHeader': Components.NoorseHeader;
   }
 
   interface StencilIntrinsicElements {
     'noorse-box': Components.NoorseBoxAttributes;
+    'noorse-header': Components.NoorseHeaderAttributes;
   }
 
 
@@ -42,12 +51,20 @@ declare global {
     new (): HTMLNoorseBoxElement;
   };
 
+  interface HTMLNoorseHeaderElement extends Components.NoorseHeader, HTMLStencilElement {}
+  var HTMLNoorseHeaderElement: {
+    prototype: HTMLNoorseHeaderElement;
+    new (): HTMLNoorseHeaderElement;
+  };
+
   interface HTMLElementTagNameMap {
     'noorse-box': HTMLNoorseBoxElement
+    'noorse-header': HTMLNoorseHeaderElement
   }
 
   interface ElementTagNameMap {
     'noorse-box': HTMLNoorseBoxElement;
+    'noorse-header': HTMLNoorseHeaderElement;
   }
 
 
