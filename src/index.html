@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <script src="/build/noorse.js"></script>
 
 </head>
 <body>
 
-  <noorse-box header="Neurse">
-    <div> Content</div>
-  </noorse-box>
+
+<noorse-header
+  navigation='{"items": [{"name": "home"},{"name": "Info", "subItems": [{"name": "whut"}, {"name": "hwat"}]}]}'></noorse-header>
 
 
+<noorse-box header="Neurse">
+  <div> Content</div>
+</noorse-box>
 
 
 </body>
