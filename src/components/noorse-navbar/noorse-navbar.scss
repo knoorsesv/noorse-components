@@ -1,12 +1,25 @@
 @import '../../global/styles';
 
-.hero-foot {
+section {
+  width: 100vw;
   display: flex;
   justify-content: center;
   background-color: $neurse-groen;
 }
 
 .navbar {
+
+  .navbar-dropdown {
+    border-radius: $navbar-dropdown-radius;
+  }
+
+  .is-hoverable:hover {
+    .navbar-dropdown {
+      animation: fadeIn 1s;
+      animation-timing-function: ease-out;
+    }
+  }
+
   .navbar-item {
 
     @include white-text();
@@ -20,6 +33,16 @@
 
   }
 
-  width: fit-content;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
 }
 

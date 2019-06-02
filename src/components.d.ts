@@ -25,10 +25,10 @@ export namespace Components {
     'header'?: string;
   }
 
-  interface NoorseHeader {
+  interface NoorseNavbar {
     'navigation': string;
   }
-  interface NoorseHeaderAttributes extends StencilHTMLAttributes {
+  interface NoorseNavbarAttributes extends StencilHTMLAttributes {
     'navigation'?: string;
     'onItemSelected'?: (event: CustomEvent) => void;
   }
@@ -37,12 +37,12 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'NoorseBox': Components.NoorseBox;
-    'NoorseHeader': Components.NoorseHeader;
+    'NoorseNavbar': Components.NoorseNavbar;
   }
 
   interface StencilIntrinsicElements {
     'noorse-box': Components.NoorseBoxAttributes;
-    'noorse-header': Components.NoorseHeaderAttributes;
+    'noorse-navbar': Components.NoorseNavbarAttributes;
   }
 
 
@@ -52,20 +52,20 @@ declare global {
     new (): HTMLNoorseBoxElement;
   };
 
-  interface HTMLNoorseHeaderElement extends Components.NoorseHeader, HTMLStencilElement {}
-  var HTMLNoorseHeaderElement: {
-    prototype: HTMLNoorseHeaderElement;
-    new (): HTMLNoorseHeaderElement;
+  interface HTMLNoorseNavbarElement extends Components.NoorseNavbar, HTMLStencilElement {}
+  var HTMLNoorseNavbarElement: {
+    prototype: HTMLNoorseNavbarElement;
+    new (): HTMLNoorseNavbarElement;
   };
 
   interface HTMLElementTagNameMap {
     'noorse-box': HTMLNoorseBoxElement
-    'noorse-header': HTMLNoorseHeaderElement
+    'noorse-navbar': HTMLNoorseNavbarElement
   }
 
   interface ElementTagNameMap {
     'noorse-box': HTMLNoorseBoxElement;
-    'noorse-header': HTMLNoorseHeaderElement;
+    'noorse-navbar': HTMLNoorseNavbarElement;
   }
 
 

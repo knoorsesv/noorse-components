@@ -14,7 +14,7 @@ stories
       {name: 'Main'},
     ],
   }
-  return (`<noorse-header navigation=${JSON.stringify(singleItem)}></noorse-header>`)
+  return (`<noorse-navbar navigation=${JSON.stringify(singleItem)}></noorse-navbar>`)
 })
 
 
@@ -31,5 +31,5 @@ stories.add('Header with component and subitems', () => {
       }],
   }
 
-  return `<noorse-header navigation=${JSON.stringify(subItems)}></noorse-header>`
+  return `<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>`
 })

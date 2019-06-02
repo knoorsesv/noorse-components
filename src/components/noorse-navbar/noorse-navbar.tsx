@@ -3,11 +3,11 @@ import {Navigation} from "../../types.interface";
 
 
 @Component({
-  tag: 'noorse-header',
-  styleUrl: 'noorse-header.scss',
+  tag: 'noorse-navbar',
+  styleUrl: 'noorse-navbar.scss',
   shadow: true
 })
-export class NoorseHeader {
+export class NoorseNavbar {
 
 
   @Prop() navigation: string;
@@ -49,33 +49,19 @@ export class NoorseHeader {
   select(item) {
     this.selectedItem = item.name;
     this.itemSelected.emit(item.name);
-    console.info('selected')
   }
 
   render() {
-    return <section class="hero">
-      <div class="hero-body">
-        <div class="has-text-centered">
-          <h1 class="title">
-            Noorse
-          </h1>
-        </div>
-      </div>
-      <div class="hero-foot">
+    return <section>
         <nav class="navbar">
-
           <div class="navbar-menu is-active">
             <div class="navbar-start">
               {
                 this.navigationItems()
               }
-
-
             </div>
           </div>
         </nav>
-
-      </div>
     </section>
   }
 }
