@@ -23,9 +23,10 @@ export class NoorseNavbar {
 
   @Listen('scroll', {target: 'document'})
   handleScroll() {
+
     if (this.el.getBoundingClientRect().top < 0) {
       this.positionClass = "out-of-sight"
-    } else {
+    } else if(this.el.getBoundingClientRect().top > 10) {
       this.positionClass = "in-sight"
     }
   }
@@ -64,7 +65,7 @@ export class NoorseNavbar {
 
   render() {
     console.info('redner')
-    return <section class={this.positionClass}>
+    return <div class={`parent-nav ${this.positionClass}`}>
       <nav class="navbar">
         <div class="navbar-menu is-active">
           <div class="navbar-start">
@@ -74,7 +75,7 @@ export class NoorseNavbar {
           </div>
         </div>
       </nav>
-    </section>
+    </div>
   }
 }
 
