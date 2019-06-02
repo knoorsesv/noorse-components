@@ -30,6 +30,7 @@ export namespace Components {
   }
   interface NoorseHeaderAttributes extends StencilHTMLAttributes {
     'navigation'?: string;
+    'onItemSelected'?: (event: CustomEvent) => void;
   }
 }
 

@@ -1,19 +1,19 @@
-import {Component, Prop, State} from "@stencil/core";
+import {Component, Event, EventEmitter, Prop, State} from "@stencil/core";
 import {Navigation} from "../../types.interface";
 
 
 @Component({
   tag: 'noorse-header',
   styleUrl: 'noorse-header.scss',
-  shadow: false
+  shadow: true
 })
 export class NoorseHeader {
 
 
   @Prop() navigation: string;
-
+  @Event() itemSelected: EventEmitter;
   @State() navigationParsed: Navigation;
-
+  @State() selectedItem: string;
 
   componentWillLoad() {
     if (this.navigation) this.navigationParsed = JSON.parse(this.navigation);
@@ -22,11 +22,8 @@ export class NoorseHeader {
 
   navigationItems() {
     return this.navigationParsed ?
-
       this.navigationParsed.items.map((item) => {
-
         return item.subItems ? this.getDropDownTag(item) : this.getLinkTag(item)
-
       }) : ''
   }
 
@@ -44,7 +41,15 @@ export class NoorseHeader {
   }
 
   getLinkTag(item) {
-    return <a class="navbar-item" href={item.href}>{item.name}</a>
+    const itemClass = `navbar-item ${item.name === this.selectedItem ? "is-active" : ""}`;
+    return <a class={itemClass}
+              onClick={() => this.select(item)}>{item.name}</a>
+  }
+
+  select(item) {
+    this.selectedItem = item.name;
+    this.itemSelected.emit(item.name);
+    console.info('selected')
   }
 
   render() {

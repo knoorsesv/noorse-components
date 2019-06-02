@@ -11,16 +11,15 @@
 
     @include white-text();
 
-    //&:hover, &.has-dropdown:hover, a.navbar-link:hover, a.navbar-item:hover {
-    //  background-color: $neurse-groen;
-    //  color: $neurse-geel;
-    //}
+    a.is-active {
+      &, &:hover {
+        background-color: $neurse-groen-darker;
+        color: $neurse-geel;
+      }
+    }
 
   }
 
-  //.navbar-dropdown {
-  //  background-color: $neurse-groen;
-  //}
   width: fit-content;
 }
 
