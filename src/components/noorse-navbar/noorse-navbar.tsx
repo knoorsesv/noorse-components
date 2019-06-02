@@ -1,4 +1,4 @@
-import {Component, Event, EventEmitter, Listen, Prop, State, h} from "@stencil/core";
+import {Component, Element, Event, EventEmitter, h, Listen, Prop, State} from "@stencil/core";
 import {Navigation} from "../../types.interface";
 
 
@@ -14,9 +14,20 @@ export class NoorseNavbar {
   @Event() itemSelected: EventEmitter;
   @State() navigationParsed: Navigation;
   @State() selectedItem: string;
+  @Element() el: HTMLElement;
+  @State() positionClass: string = "";
 
   componentWillLoad() {
     if (this.navigation) this.navigationParsed = JSON.parse(this.navigation);
+  }
+
+  @Listen('scroll', {target: 'document'})
+  handleScroll() {
+    if (this.el.getBoundingClientRect().top < 0) {
+      this.positionClass = "out-of-sight"
+    } else {
+      this.positionClass = "in-sight"
+    }
   }
 
 
@@ -52,16 +63,17 @@ export class NoorseNavbar {
   }
 
   render() {
-    return <section>
-        <nav class="navbar">
-          <div class="navbar-menu is-active">
-            <div class="navbar-start">
-              {
-                this.navigationItems()
-              }
-            </div>
+    console.info('redner')
+    return <section class={this.positionClass}>
+      <nav class="navbar">
+        <div class="navbar-menu is-active">
+          <div class="navbar-start">
+            {
+              this.navigationItems()
+            }
           </div>
-        </nav>
+        </div>
+      </nav>
     </section>
   }
 }

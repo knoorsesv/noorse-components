@@ -12,6 +12,13 @@
 | `navigation` | `navigation` |             | `string` | `undefined` |
 
 
+## Events
+
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `itemSelected` |             | `CustomEvent<any>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -33,3 +33,48 @@ stories.add('Header with component and subitems', () => {
 
   return `<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>`
 })
+
+
+stories.add('Header with many items', () => {
+  const subItems = {
+    items:
+      [{
+        name: 'Main',
+
+      },{
+        name: 'Clubinfo',
+
+      },{
+        name: 'Senioren',
+
+      },{
+        name: 'Jeugd',
+
+      },{
+        name: 'G-voetbal',
+
+      },{
+        name: 'Dames',
+
+      },{
+        name: 'Meisjes',
+
+      },{
+        name: 'Contact',
+
+      }],
+  }
+
+  return `<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>`
+})
+stories.add('Header with content around it', () => {
+  const subItems = {
+    items:
+      [{
+        name: 'Main',
+
+      }],
+  }
+
+  return `<div style="height: 200px;"></div><noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar><div style="height: 1000px;"></div> `
+})
