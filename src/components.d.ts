@@ -5,45 +5,22 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-
   interface NoorseBox {
     /**
     * The first name
     */
     'header': string;
   }
-  interface NoorseBoxAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'header'?: string;
-  }
-
   interface NoorseNavbar {
     'navigation': string;
-  }
-  interface NoorseNavbarAttributes extends StencilHTMLAttributes {
-    'navigation'?: string;
-    'onItemSelected'?: (event: CustomEvent) => void;
   }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'NoorseBox': Components.NoorseBox;
-    'NoorseNavbar': Components.NoorseNavbar;
-  }
-
-  interface StencilIntrinsicElements {
-    'noorse-box': Components.NoorseBoxAttributes;
-    'noorse-navbar': Components.NoorseNavbarAttributes;
-  }
 
 
   interface HTMLNoorseBoxElement extends Components.NoorseBox, HTMLStencilElement {}
@@ -57,24 +34,37 @@ declare global {
     prototype: HTMLNoorseNavbarElement;
     new (): HTMLNoorseNavbarElement;
   };
-
   interface HTMLElementTagNameMap {
-    'noorse-box': HTMLNoorseBoxElement
-    'noorse-navbar': HTMLNoorseNavbarElement
-  }
-
-  interface ElementTagNameMap {
     'noorse-box': HTMLNoorseBoxElement;
     'noorse-navbar': HTMLNoorseNavbarElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface NoorseBox extends JSXBase.HTMLAttributes<HTMLNoorseBoxElement> {
+    /**
+    * The first name
+    */
+    'header'?: string;
+  }
+  interface NoorseNavbar extends JSXBase.HTMLAttributes<HTMLNoorseNavbarElement> {
+    'navigation'?: string;
+    'onItemSelected'?: (event: CustomEvent<any>) => void;
+  }
+
+  interface IntrinsicElements {
+    'noorse-box': NoorseBox;
+    'noorse-navbar': NoorseNavbar;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+
