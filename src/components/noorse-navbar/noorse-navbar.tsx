@@ -15,22 +15,27 @@ export class NoorseNavbar {
   @State() navigationParsed: Navigation;
   @State() selectedItem: string;
   @Element() el: HTMLElement;
-  @State() positionClass: string = "";
+  @State() positionClass: string = "is-active";
+  @State() showMenu: boolean = false;
 
   componentWillLoad() {
     if (this.navigation) this.navigationParsed = JSON.parse(this.navigation);
+    this.setClassBasedOnScrollHeight();
   }
 
   @Listen('scroll', {target: 'document'})
   handleScroll() {
+    this.setClassBasedOnScrollHeight();
+  }
 
+
+  private setClassBasedOnScrollHeight() {
     if (this.el.getBoundingClientRect().top < 0) {
       this.positionClass = "out-of-sight"
-    } else if(this.el.getBoundingClientRect().top > 10) {
+    } else if (this.el.getBoundingClientRect().top > 5) {
       this.positionClass = "in-sight"
     }
   }
-
 
   navigationItems() {
     return this.navigationParsed ?
@@ -64,17 +69,16 @@ export class NoorseNavbar {
   }
 
   render() {
-    console.info('redner')
-    return <div class={`parent-nav ${this.positionClass}`}>
-      <nav class="navbar">
-        <div class="navbar-menu is-active">
-          <div class="navbar-start">
-            {
-              this.navigationItems()
-            }
-          </div>
+    return <div>
+      <nav class={`navbar ${this.positionClass}`}>
+        <div class={`navbar-icon`} onClick={() => this.showMenu = !this.showMenu}>        </div>
+        <div class={`navbar-main ${this.showMenu ? "menu-shown": ""}`}>
+          {
+            this.navigationItems()
+          }
         </div>
       </nav>
+      {this.positionClass === 'out-of-sight' && <div class="placeholder"></div> }
     </div>
   }
 }

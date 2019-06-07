@@ -1,4 +1,10 @@
 
+
+$tablet: 600px;
+
+@import '../../node_modules/bulma/sass/utilities/initial-variables';
+
+
 html {
   font-family: 'Cabin', arial, serif;
   height: 100%;
@@ -19,7 +25,7 @@ html {
 $header-font: 'Francois One', arial, serif;
 
 $primary: #007800;
-$navbar-breakpoint: 200px;
+$navbar-breakpoint: $tablet;
 
 $navbar-background-color: $neurse-groen;
 $navbar-dropdown-background-color: $neurse-groen;
@@ -31,6 +37,7 @@ $navbar-item-active-color: $neurse-geel;
 $navbar-item-hover-background-color: $neurse-groen-darker;
 $navbar-dropdown-item-hover-background-color: $neurse-groen-darker;
 $navbar-item-active-background-color: $neurse-groen-darker;
+
 
 
 @import '../../node_modules/bulma/bulma';
