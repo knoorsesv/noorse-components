@@ -65,7 +65,10 @@ stories.add('Header with many items', () => {
       }],
   }
 
-  return `<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>`
+  return `<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>
+
+<div style="height: 1000px; background-color: grey">Content</div> \`
+`
 })
 stories.add('Header with content around it', () => {
   const subItems = {
@@ -76,5 +79,7 @@ stories.add('Header with content around it', () => {
       }],
   }
 
-  return `<div style="height: 200px;"></div><noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar><div style="height: 1000px;"></div> `
+  return `<div style="height: 200px; background-color: grey"></div>
+<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>
+<div style="height: 1000px; background-color: grey">Content</div> `
 })

@@ -6,6 +6,11 @@
   top: 0;
   left: 0;
 
+
+}
+
+.placeholder {
+  height: $navbar-height;
 }
 
 @mixin fix-icon {
