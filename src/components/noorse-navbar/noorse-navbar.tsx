@@ -70,7 +70,9 @@ export class NoorseNavbar {
 
   render() {
     return <div class={`${this.positionClass}`}>
-      <div class={`navbar-icon`} onClick={() => this.showMenu = !this.showMenu}></div>
+      <div class={`navbar-icon`} onClick={() => this.showMenu = !this.showMenu}>
+        <img src="https://img.icons8.com/material/24/000000/menu.png"/>
+      </div>
       <nav class={`navbar ${this.positionClass}`}>
         <div class={`navbar-main ${this.showMenu ? "menu-shown" : ""}`}>
           {

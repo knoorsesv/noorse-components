@@ -15,17 +15,44 @@
     height: $navbar-height;
   }
 }
+
+@mixin drop-frame($end) {
+
+  @keyframes drop-from-top {
+    0% {
+      top: -100px;
+    }
+
+    100% {
+      top: $end
+    }
+  }
+}
+
+
 @mixin fix-icon {
+
+  $icon-size: 100px;
+
+  @include drop-frame(-3*$icon-size/5);
 
   .navbar-icon {
     z-index: 3;
     position: fixed;
-    top: 20px;
-    left: 20px;
-    height: 20px;
-    width: 20px;
-    background-color: red;
+    top: -3*$icon-size/5;
+    left: -$icon-size/2;
+    height: $icon-size;
+    width: $icon-size;
+    border-radius: 40%;
+    background-color: $neurse-groen;
+    animation: drop-from-top 1s;
     //background-image: url('assets/menu-icon.svg');
+    img {
+      color: $neurse-geel;
+      position: relative;
+      top: 3*$icon-size/5 + 5px;
+      left: $icon-size/2 + 5px;
+    }
   }
 
 }
