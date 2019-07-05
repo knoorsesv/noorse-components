@@ -2,19 +2,21 @@
 
 @mixin stick-header-to-top() {
 
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  @at-root {
-    .placeholder {
-      height: $navbar-height;
-    }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
 }
 
+@mixin add-placeholder() {
+  .placeholder {
+    height: $navbar-height;
+  }
+}
 @mixin fix-icon {
+
   .navbar-icon {
     z-index: 3;
     position: fixed;
@@ -22,12 +24,20 @@
     left: 20px;
     height: 20px;
     width: 20px;
-    background-image: url('assets/menu-icon.svg');
+    background-color: red;
+    //background-image: url('assets/menu-icon.svg');
   }
+
 }
 
 @mixin hide-icon() {
   .navbar-icon {
+    display: none;
+  }
+}
+
+@mixin hide-bar() {
+  .navbar {
     display: none;
   }
 }
@@ -53,6 +63,37 @@
   }
 }
 
+// big-screen
+@media screen and (min-width: $tablet) {
+  @include hide-icon();
+
+  .in-sight {
+
+  }
+
+  .out-of-sight {
+    @include stick-header-to-top();
+    @include add-placeholder();
+  }
+}
+
+// small-screen
+@media screen and (max-width: $tablet) {
+
+  .in-sight {
+    @include hide-icon();
+  }
+
+  .out-of-sight {
+    @include fix-icon();
+    @include float-menu-left();
+    @include add-placeholder();
+    @include hide-bar();
+    //min-height: 0;
+  }
+
+}
+
 .navbar {
   width: 100%;
 
@@ -62,36 +103,6 @@
   .navbar-main {
     display: flex;
     justify-content: center;
-  }
-
-  // big-screen
-  @media screen and (min-width: $tablet) {
-    @include hide-icon();
-
-    &.in-sight {
-      .navbar-dropdown {
-      }
-    }
-
-    &.out-of-sight {
-      @include stick-header-to-top();
-    }
-
-  }
-
-  // small-screen
-  @media screen and (max-width: $tablet) {
-
-    &.in-sight {
-      @include hide-icon();
-    }
-
-    &.out-of-sight {
-      @include fix-icon();
-      @include float-menu-left();
-      //min-height: 0;
-    }
-
   }
 
   .navbar-dropdown {
@@ -107,6 +118,8 @@
 
   .navbar-item {
     font-size: .8rem;
+    display: flex;
+    align-items: center;
     @include white-text();
     a.is-active {
       &, &:hover {

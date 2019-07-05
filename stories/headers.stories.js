@@ -1,6 +1,6 @@
 import {console, document} from 'global'
 import {storiesOf} from '@storybook/html'
-import { action, withActions } from '@storybook/addon-actions';
+import {withActions} from '@storybook/addon-actions'
 
 const stories = storiesOf('Headers', module)
 
@@ -70,7 +70,8 @@ stories.add('Header with many items', () => {
 <div style="height: 1000px; background-color: grey">Content</div> \`
 `
 })
-stories.add('Header with content around it', () => {
+
+const headerWithContent = () => {
   const subItems = {
     items:
       [{
@@ -82,4 +83,12 @@ stories.add('Header with content around it', () => {
   return `<div style="height: 200px; background-color: grey"></div>
 <noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>
 <div style="height: 1000px; background-color: grey">Content</div> `
-})
+}
+
+stories.add('Header with content around it', headerWithContent)
+
+stories
+  .addParameters({viewport: {defaultViewport: 'iphone6'}})
+  .add('Small screen Header with content around it', headerWithContent)
+
+

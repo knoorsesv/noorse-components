@@ -69,10 +69,10 @@ export class NoorseNavbar {
   }
 
   render() {
-    return <div>
+    return <div class={`${this.positionClass}`}>
+      <div class={`navbar-icon`} onClick={() => this.showMenu = !this.showMenu}></div>
       <nav class={`navbar ${this.positionClass}`}>
-        <div class={`navbar-icon`} onClick={() => this.showMenu = !this.showMenu}>        </div>
-        <div class={`navbar-main ${this.showMenu ? "menu-shown": ""}`}>
+        <div class={`navbar-main ${this.showMenu ? "menu-shown" : ""}`}>
           {
             this.navigationItems()
           }
