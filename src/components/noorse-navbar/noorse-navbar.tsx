@@ -78,7 +78,7 @@ export class NoorseNavbar {
           }
         </div>
       </nav>
-      {this.positionClass === 'out-of-sight' && <div class="placeholder"></div> }
+      {this.positionClass === 'out-of-sight' && <div class={`placeholder ${this.positionClass}`}></div>}
     </div>
   }
 }

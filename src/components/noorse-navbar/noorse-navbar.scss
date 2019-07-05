@@ -6,11 +6,12 @@
   top: 0;
   left: 0;
 
+  @at-root {
+    .placeholder {
+      height: $navbar-height;
+    }
+  }
 
-}
-
-.placeholder {
-  height: $navbar-height;
 }
 
 @mixin fix-icon {
@@ -28,7 +29,6 @@
 @mixin hide-icon() {
   .navbar-icon {
     display: none;
-
   }
 }
 
@@ -69,9 +69,7 @@
     @include hide-icon();
 
     &.in-sight {
-
       .navbar-dropdown {
-
       }
     }
 
@@ -91,8 +89,7 @@
     &.out-of-sight {
       @include fix-icon();
       @include float-menu-left();
-      min-height: 0;
-
+      //min-height: 0;
     }
 
   }
