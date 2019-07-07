@@ -71,6 +71,32 @@
   }
 }
 
+@mixin hide-dropdown() {
+  .navbar-dropdown {
+    display: none;
+  }
+
+  .has-dropdown.is-hoverable:hover {
+    .navbar-dropdown {
+      //todo: copy paste from bulma code, should be cleaner
+      display: block;
+      background-color: #007800;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border-top: 2px solid #dbdbdb;
+      -webkit-box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+      box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+      font-size: 0.875rem;
+      left: 0;
+      min-width: 100%;
+      position: absolute;
+      top: 100%;
+      z-index: 20;
+      width: max-content;
+    }
+  }
+}
+
 @mixin float-menu-left() {
 
   .navbar-main {
@@ -111,6 +137,7 @@
 
   .in-sight {
     @include hide-icon();
+    @include hide-dropdown();
   }
 
   .out-of-sight {

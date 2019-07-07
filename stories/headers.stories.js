@@ -9,17 +9,16 @@ const stories = storiesOf('Headers', module)
 stories
   .addDecorator(withActions('itemSelected'))
   .add('Header 1 main component', () => {
-  const singleItem = {
-    items: [
-      {name: 'Main'},
-    ],
-  }
-  return (`<noorse-navbar navigation=${JSON.stringify(singleItem)}></noorse-navbar>`)
-})
+    const singleItem = {
+      items: [
+        {name: 'Main'},
+      ],
+    }
+    return (`<noorse-navbar navigation=${JSON.stringify(singleItem)}></noorse-navbar>`)
+  })
 
 
-
-stories.add('Header with component and subitems', () => {
+const headerWithSubItems = () => {
   const subItems = {
     items:
       [{
@@ -27,13 +26,21 @@ stories.add('Header with component and subitems', () => {
         subItems: [
           {name: 'Sub-1'},
           {name: 'Sub-2'},
+          {name: 'Sub-2'},
+          {name: 'Sub-2'},
+          {name: 'Sub-2'},
+          {name: 'Sub-2'},
         ],
       }],
   }
 
   return `<noorse-navbar navigation=${JSON.stringify(subItems)}></noorse-navbar>`
-})
+}
+stories.add('Header with component and subitems', headerWithSubItems)
 
+stories
+  .addParameters({viewport: {defaultViewport: 'iphone6'}})
+  .add('Small screen Header with subitems', headerWithSubItems)
 
 const headerWithManyItems = () => {
   const subItems = {
@@ -41,25 +48,25 @@ const headerWithManyItems = () => {
       [{
         name: 'Main',
 
-      },{
+      }, {
         name: 'Clubinfo',
 
-      },{
+      }, {
         name: 'Senioren',
 
-      },{
+      }, {
         name: 'Jeugd',
 
-      },{
+      }, {
         name: 'G-voetbal',
 
-      },{
+      }, {
         name: 'Dames',
 
-      },{
+      }, {
         name: 'Meisjes',
 
-      },{
+      }, {
         name: 'Contact',
 
       }],
