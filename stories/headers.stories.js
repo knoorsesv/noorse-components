@@ -35,7 +35,7 @@ stories.add('Header with component and subitems', () => {
 })
 
 
-stories.add('Header with many items', () => {
+const headerWithManyItems = () => {
   const subItems = {
     items:
       [{
@@ -69,12 +69,19 @@ stories.add('Header with many items', () => {
 
 <div style="height: 1000px; background-color: grey">Content</div> \`
 `
-})
+}
+
+stories.add('Header with many items', headerWithManyItems)
+
+stories
+  .addParameters({viewport: {defaultViewport: 'iphone6'}})
+  .add('Small screen Header with many items', headerWithManyItems)
 
 const headerWithContent = () => {
   const subItems = {
     items:
       [{
+        name: 'Main',
         name: 'Main',
 
       }],
