@@ -12,6 +12,8 @@
 
 @mixin add-placeholder() {
   .placeholder {
+    background-color: $neurse-groen;
+
     height: $navbar-height;
   }
 }
