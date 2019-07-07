@@ -1,6 +1,7 @@
 import {Component, Element, Event, EventEmitter, h, Listen, Prop, State} from "@stencil/core";
 import {Navigation} from "../../types.interface";
 
+const edge = -10;
 
 @Component({
   tag: 'noorse-navbar',
@@ -28,11 +29,12 @@ export class NoorseNavbar {
     this.setClassBasedOnScrollHeight();
   }
 
-
   private setClassBasedOnScrollHeight() {
-    if (this.el.getBoundingClientRect().top < 0) {
+
+    console.log(this.el.getBoundingClientRect().top);
+    if (this.el.getBoundingClientRect().top < edge) {
       this.positionClass = "out-of-sight"
-    } else if (this.el.getBoundingClientRect().top > 5) {
+    } else if (this.el.getBoundingClientRect().top >= edge) {
       this.positionClass = "in-sight"
     }
   }
