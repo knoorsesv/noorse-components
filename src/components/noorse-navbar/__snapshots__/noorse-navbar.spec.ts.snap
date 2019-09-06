@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Noorse Box should render correct snapshots 1`] = `
+<noorse-navbar navigation="{&quot;items&quot;:[{&quot;name&quot;:&quot;whut&quot;},{&quot;name&quot;:&quot;what&quot;,&quot;subItems&quot;:[{&quot;name&quot;:&quot;huehue&quot;}]}]}">
+  <mock:shadow-root>
+    <div class="in-sight">
+      <div class="navbar-icon">
+        <img src="https://img.icons8.com/material/24/000000/menu.png">
+      </div>
+      <nav class="in-sight navbar">
+        <div class="navbar-main">
+          <a class="navbar-item">
+            whut
+          </a>
+          <div class="has-dropdown is-hoverable navbar-item">
+            <a class="is-arrowless navbar-item navbar-link">
+              what
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                huehue
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </mock:shadow-root>
+</noorse-navbar>
+`;
