@@ -10,6 +10,8 @@ const edge = -10;
 })
 export class NoorseNavbar {
 
+  //todo: input method for highlighting active element
+
 
   @Prop() navigation: string;
   @Event() itemSelected: EventEmitter;

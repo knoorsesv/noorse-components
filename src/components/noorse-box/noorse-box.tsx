@@ -1,9 +1,8 @@
-import { Component, Prop, h } from '@stencil/core';
+import {Component, h, Prop} from '@stencil/core';
 
 @Component({
   tag: 'noorse-box',
-  styleUrl: 'noorse-box.scss',
-  shadow: true
+  styleUrl: 'noorse-box.scss'
 })
 export class NoorseBox {
   /**

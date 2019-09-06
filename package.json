@@ -13,14 +13,16 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "test": "stencil test --spec",
+    "test.watch": "stencil test --spec --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@stencil/core": "1.0.0",
     "@stencil/sass": "0.2.3",
     "@storybook/addon-actions": "^5.0.11",
@@ -29,8 +31,12 @@
     "@storybook/addon-storysource": "^5.0.11",
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/html": "^5.0.11",
+    "@types/jest": "23.3.14",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
-    "bulma": "^0.7.5"
+    "bulma": "^0.7.5",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0"
   },
   "resolutions": {
     "tar": "4.4.2"
