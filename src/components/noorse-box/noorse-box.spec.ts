@@ -6,7 +6,7 @@ describe("Noorse Box", function () {
 
   let box: SpecPage;
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     box = await newSpecPage({
       components: [NoorseBox],
       html: `<noorse-box header="header">content</noorse-box>`
@@ -14,7 +14,7 @@ describe("Noorse Box", function () {
     await box.waitForChanges()
   });
 
-  it("should render a box with the content", () => {
+  it("should render a box with the content", async () => {
     expect(box.root.querySelector('div.box')).not.toBeNull()
   });
 
@@ -27,7 +27,7 @@ describe("Noorse Box", function () {
   });
 
   it('should render correct snapshots', function () {
-    expect(box).toMatchSnapshot()
+    expect(box.root.outerHTML).toMatchSnapshot()
   });
 
 });

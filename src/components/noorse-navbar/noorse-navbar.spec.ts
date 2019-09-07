@@ -6,7 +6,7 @@ describe("Noorse Box", function () {
 
   let navbar: SpecPage;
 
-  beforeAll(async () => {
+  beforeEach(async () => {
 
     const navigation = JSON.stringify({
       items: [
