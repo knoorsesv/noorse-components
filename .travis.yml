@@ -2,12 +2,15 @@ language: node_js
 node_js:
   - "node"
 
-cache: npm
+cache: yarn
 
 jobs:
   include:
+    - stage: test
+      script: yarn test
+
     - stage: build
-      script: npm run build
+      script: yarn build
 
 before_deploy:
   - npm version "0.0.$TRAVIS_BUILD_NUMBER"

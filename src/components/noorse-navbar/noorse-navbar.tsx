@@ -10,12 +10,17 @@ const edge = -10;
 })
 export class NoorseNavbar {
 
+  //todo: input method for highlighting active element
+
 
   @Prop() navigation: string;
+
+  @Element() el: HTMLElement;
+
   @Event() itemSelected: EventEmitter;
+
   @State() navigationParsed: Navigation;
   @State() selectedItem: string;
-  @Element() el: HTMLElement;
   @State() positionClass: string = "is-active";
   @State() showMenu: boolean = false;
 
@@ -30,8 +35,6 @@ export class NoorseNavbar {
   }
 
   private setClassBasedOnScrollHeight() {
-
-    console.log(this.el.getBoundingClientRect().top);
     if (this.el.getBoundingClientRect().top < edge) {
       this.positionClass = "out-of-sight"
     } else if (this.el.getBoundingClientRect().top >= edge) {

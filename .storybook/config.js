@@ -1,9 +1,12 @@
-import { configure } from '@storybook/html';
+import {configure} from '@storybook/html'
 
-// automatically import all files ending in *.stories.js
-const req = require.context('../stories', true, /\.stories\.js$/);
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  if (require.context instanceof Function) {
+    require.context('../', true, /\.story\.js$/).keys().forEach(filename => req(filename))
+  } else {
+    // todo: load all stories this way
+    require('../src/components/noorse-box/noorse-box.story')
+  }
 }
 
-configure(loadStories, module);
+configure(loadStories, module)

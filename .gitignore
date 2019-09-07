@@ -4,7 +4,6 @@ www/
 *~
 *.sw[mnpcod]
 *.log
-*.lock
 *.tmp
 *.tmp.*
 log.txt
@@ -29,3 +28,5 @@ UserInterfaceState.xcuserstate
 /dist/
 /node_modules/
 /package-lock.json
+/storybook-static/
+/.storybook/__image_snapshots__/__diff_output__/
