@@ -1,5 +1,5 @@
-import { document, console } from 'global';
-import { storiesOf } from '@storybook/html';
+import {console, document} from 'global'
+import {storiesOf} from '@storybook/html'
 
 storiesOf('Containers', module)
   .add('box', () => '<noorse-box>Content</noorse-box>')

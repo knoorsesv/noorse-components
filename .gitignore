@@ -30,3 +30,4 @@ UserInterfaceState.xcuserstate
 /node_modules/
 /package-lock.json
 /storybook-static/
+/.storybook/__image_snapshots__/__diff_output__/

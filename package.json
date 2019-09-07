@@ -16,6 +16,8 @@
     "test": "stencil test --spec",
     "test.watch": "stencil test --spec --watch",
     "storybook": "start-storybook -p 6006",
+    "test-storybook": "jest --config ./.storybook/storyshot.jest.config.js",
+    "update-storybook-snapshots": "npm run test-storybook -u",
     "build-storybook": "build-storybook"
   },
   "dependencies": {},
@@ -26,14 +28,16 @@
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-events": "^5.0.11",
     "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-storyshots": "^5.1.11",
+    "@storybook/addon-storyshots-puppeteer": "^5.1.11",
     "@storybook/addon-storysource": "^5.0.11",
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/html": "^5.0.11",
-    "@types/jest": "23.3.14",
+    "@types/jest": "^24.0.18",
     "babel-loader": "^8.0.6",
     "bulma": "^0.7.5",
-    "jest": "23.6.0",
-    "jest-cli": "23.6.0"
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0"
   },
   "resolutions": {
     "tar": "4.4.2"
