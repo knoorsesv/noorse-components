@@ -18,7 +18,8 @@
     "storybook": "start-storybook -p 6006",
     "test-storybook": "jest --config ./.storybook/storyshot.jest.config.js",
     "update-storybook-snapshots": "npm run test-storybook -u",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
