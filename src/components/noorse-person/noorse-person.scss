@@ -1,0 +1,16 @@
+
+.noorse-card {
+
+  background-color: #f5f5f5;
+  color: $neurse-groen;
+  //todo: responsive sizes
+  width: 350px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+}
