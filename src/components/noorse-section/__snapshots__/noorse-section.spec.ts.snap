@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Noorse Section with header 1`] = `"<noorse-section header=\\"header\\"><!----> <div><h1>header</h1><p> content</p></div></noorse-section>"`;
+
+exports[`Noorse Section without header 1`] = `"<noorse-section><!----> <div> <p> content</p></div></noorse-section>"`;
